@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'corp-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<corp-parent></corp-parent>`,
 })
-export class AppComponent {
-  title = 'corp-script-interview';
-}
+export class AppComponent {}

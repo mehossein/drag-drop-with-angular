@@ -1,0 +1,22 @@
+<div
+  class="min-w-screen min-h-screen bg-blue-300 flex items-center p-10 flex-col gap-5"
+>
+  <button
+    class="p-5 w-fit h-fit bg-blue-700 flex justify-center items-center text-sm text-white rounded"
+    (click)="addChildComponent()"
+  >
+    add child component
+  </button>
+  <div cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let item of list" cdkDrag>
+      <ng-container
+        [ngTemplateOutlet]="child"
+        [ngTemplateOutletContext]="{ $implicit: item }"
+      ></ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #child let-index>
+  <corp-child [index]="index"></corp-child>
+</ng-template>
